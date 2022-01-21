@@ -15,7 +15,10 @@ func main(){
     log.SetPrefix("greetings: ")
     log.SetFlags(0)
 
-	message, err := greetings.Hello("Gladys")
+	// A slice of names.
+	names := []string{"Gladys", "Samantha", "Darrin"}
+
+	messages, err := greetings.Hellos(names)
 
 	// If an error was returned, print it to the console and
     // exit the program.
@@ -23,5 +26,5 @@ func main(){
 		// log package's Fatal function to print the error and stop the program.
 		log.Fatal(err)
 	}
-	fmt.Println(message)
+	fmt.Println(messages)
 }
